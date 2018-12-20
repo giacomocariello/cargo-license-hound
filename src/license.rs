@@ -16,6 +16,7 @@ const LICENSE_EXTENSIONS: &[&str] = &[
 #[derive(Debug, Copy, Clone, Serialize)]
 pub enum LicenseId {
     Bsd3Clause,
+    Bsd2Clause,
     Mit,
     Mpl2,
 }
@@ -26,6 +27,7 @@ impl LicenseId {
         match self {
             &Mit => &[ "-MIT" ],
             &Bsd3Clause => &[ ],
+            &Bsd2Clause => &[ ],
             &Mpl2 => &[ ],
         }
     }
@@ -54,6 +56,7 @@ impl LicenseId {
         match self {
             &Mit => "MIT",
             &Bsd3Clause => "BSD-3-Clause",
+            &Bsd2Clause => "BSD-2-Clause",
             &Mpl2 => "MPL-2.0",
         }
     }
